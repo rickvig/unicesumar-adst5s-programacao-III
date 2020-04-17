@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Protótipo">
+    <meta name="author" content="MentorsTec">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Caluladora</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">AOCP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <main role="main">
+
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">Vagas de negro</h1>
+                <p>...</p>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="form-row">
+
+                <h3><span class="badge badge-danger">Deseja concorrer as vagas reservadas a candidatos
+                        negros e declaro ser preto ou pardo, conforme o quesito <br />
+                        cor ou raça utilizado pela Fundação Instituto Brasileiro de Geografia e Estatística - IBGE, nos
+                        termos da <br />
+                        Lei Federal nº 12.990, de 9 de junho de 2014? *
+                    </span></h3>
+
+                </span>
+                <label for="inputState">Deseja concorrer a vaga de negro?</label>
+                <div class="form-group col-md-2">
+                    <select id="operador" onclick="opa()" class="form-control">
+                        <option>sim</option>
+                        <option>não</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <script>
+        function opa() {
+
+            console.log('opa', $("#operador").val())
+
+            if ($("#operador").val() === 'sim') {
+
+                Swal.fire({
+                    title: 'Você tem certeza que deseja concorrer a vaga de negro?',
+                    html: "Digite <i>sim</i> para confirmar!",
+                    icon: 'question',
+                    allowEnterKey: false,
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sim',
+                    cancelButtonText: 'Não',
+                    input: 'text',
+                    inputAttributes: {  
+                        autocapitalize: 'off'
+                    },
+                    preConfirm: (login) => {
+                        console.log('OPA', login);
+                        if (login !== "sim") {
+                            Swal.showValidationMessage(
+                                `Digite &nbsp<i>sim</i>&nbsp para confirmar!`
+                              )
+                          }
+                      },
+                      allowOutsideClick: () => !Swal.isLoading()
+                }).then((result) => {
+                    if (result.value) {
+                        Swal.fire(
+                            'Voce marcou que vai concorrer a vaga de NEGRO!',
+                            '',
+                            'success'
+                        )
+                    } else {
+                        $("#operador").val('não')
+                    }
+                })
+            }
+        }
+
+    </script>
+</body>
+
+</html>
