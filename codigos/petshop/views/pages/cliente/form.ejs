@@ -1,0 +1,83 @@
+<%- contentFor('body') %>
+
+<h1>
+  <% if (cliente.id) { %>
+  Altera
+  <% } else { %>
+  Novo
+  <% } %>
+  Cliente
+</h1>
+
+<form action="/cliente/save" method="POST">
+  
+  <input type="hidden" name="id" value="<%= cliente.id %>" />
+  
+
+  <div class="form-group">
+    <label>Nome</label>
+    <input type="text" class="form-control" name="nome" placeholder="Nome" value="<%= cliente.nome %>" />
+  </div>
+  <div class="form-group">
+    <label>Sobrenome</label>
+    <input type="text" class="form-control" name="sobrenome" placeholder="Sobrenome" value="<%= cliente.sobrenome %>" />
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" name="email" placeholder="E-mail" value="<%= cliente.email %>" />
+  </div>
+  
+  <div class="form-group">
+    <label>Telefone</label>
+    <input type="hidden" name="telefoneId"  value="<% if (cliente.telefones.length > 0) { %><%= cliente.telefones[0].id %><% } %>" />
+    <input type="text" class="form-control" name="telefone" placeholder="Telefone" 
+            value="<% if (cliente.telefones.length > 0) { %><%= cliente.telefones[0].numero %><% } %>" />
+  </div>
+
+  <div class="form-group">
+    <label>Celular</label>
+    <input type="hidden" name="celularId"  value="<% if (cliente.telefones.length > 1) { %><%= cliente.telefones[1].id %><% } %>" />
+    <input type="text" class="form-control" name="celular" placeholder="Celular" 
+            value="<% if (cliente.telefones.length > 1) { %><%= cliente.telefones[1].numero %><% } %>" />
+  </div>
+
+  <fieldset class="form-group">
+    <input type="hidden" name="enderecoId"  value="<% if (cliente.endereco) { %><%= cliente.endereco.id %><% } %>" />
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label>Cep</label>
+        <input type="text" class="form-control" name="cep" placeholder="CEP" value="<% if (cliente.endereco) { %><%= cliente.endereco.cep %><% } %>" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label>Rua</label>
+        <input type="text" class="form-control" name="rua" placeholder="Rua" value="<% if (cliente.endereco) { %><%= cliente.endereco.rua %><% } %>" />
+      </div>
+      <div class="col-md-2 mb-3">
+        <label>Número</label>
+        <input type="number" class="form-control" name="numero" placeholder="Número"
+          value="<% if (cliente.endereco) { %><%= cliente.endereco.numero %><% } %>" />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label>Bairro</label>
+        <input type="text" class="form-control" name="bairro" placeholder="Bairro"
+          value="<% if (cliente.endereco) { %><%= cliente.endereco.bairro %><% } %>" />
+      </div>
+      <div class="col-md-2 mb-3">
+        <label>Estado</label>
+        <input type="text" class="form-control" name="estado" placeholder="Estado"
+          value="<% if (cliente.endereco) { %><%= cliente.endereco.estado %><% } %>" />
+      </div>
+      <div class="col-md-2 mb-3">
+        <label>Cidade</label>
+        <input type="text" class="form-control" name="cidade" placeholder="Cidade"
+          value="<% if (cliente.endereco) { %><%= cliente.endereco.cidade %><% } %>" />
+      </div>
+    </div>
+  </fieldset>
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+
+  <div class="clearfix"></div>
+</form>

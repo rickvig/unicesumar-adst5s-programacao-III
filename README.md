@@ -12,5 +12,9 @@
 - Aula 07 - **25/03/2020** - Criação do CRUD usando o mapeameento com Driver - Atividade: CRUD Petsho usando somente o drive de conexão - *Aula Remota* 
 - Aula 08 - **01/04/2020** - Projeto NodeJs com Yarn - Atividade: criação do projeto - *Aula Remota* 
 - Aula 09 - **08/04/2020** - Projeto NodeJs com Yarn e Sequelize - Atividade: configuração da primeira entidade Cliente com Sequelize - *Aula Remota*
-- Aula 09 - **15/04/2020** - Intrdução ao MVC - CRUD completo das entidades do Petshop - *Aula Remota*
-
+- Aula 10 - **15/04/2020** - Projeto NodeJs com Yarn e Sequelize parte II - Atividade: *Aula Remota*
+- Aula 11 - **22/04/2020** - Revisão para prova - Atividade: Resumo da prova *Aula Remota*
+- Aula 12 - **29/04/2020** - Prova *Aula Remota*
+- Aula 13 - **06/05/2020** - Revisão da prova - Atividade: Resumo Artigo MVC *Aula Remota*
+- Aula 13 - **13/05/2020** - Introdução a MVC - Atividade: Telas de CRUD do petshop *Aula Remota*
+- Aula 13 - **20/05/2020** - MVC parte II - Atividade: Apresentar as telas de CRUD Petshop *Aula Remota*

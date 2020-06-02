@@ -1,0 +1,34 @@
+<%- contentFor('body') %>
+<h1>Clients</h1>
+
+<div class="row">
+    <div class="col-xs-1-12 p-2">
+        <a href="/cliente/new">
+            <button type="button" class="btn btn-primary">Novo</button>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <% if (clientes.length === 0) { %>
+        <div class="col-xs-1-12 p-2">
+            <h5>Ainda não tem clientes cadastrados...</h5>
+        </div>
+    <% } %>
+
+    <% for (cliente of clientes){%>
+
+    <div class="col-xs-1-12 p-2">
+        <div class="card">
+            <!-- <img class="card-img-top" src="https://via.placeholder.com/250" alt="Card image cap"> -->
+            <div class="card-body">
+                <h5 class="card-title"><%= cliente.nome %> <%= cliente.sobrenome %></h5>
+                <p class="card-text">E-mail: <%= cliente.email %></p>
+                <a href="/cliente/edit/<%= cliente.id %>" class="btn btn-primary">Editar</a>
+                <a href="/cliente/delete/<%= cliente.id %>" class="btn btn-secondary">Remover</a>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+</div>
