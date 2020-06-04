@@ -13,6 +13,11 @@ class Fornecedor extends Model {
       sequelize,
     })
   }
+
+  static associate(models) {
+    this.hasOne(models.Endereco, { foreignKey: 'cliente_id', as: 'endereco' });
+    this.hasMany(models.Telefone, { foreignKey: 'cliente_id', as: 'telefones' });
+  }
 }
 
 // Fornecedor.init(sequelize);

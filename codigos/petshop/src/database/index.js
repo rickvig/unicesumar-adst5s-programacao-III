@@ -14,6 +14,7 @@ Endereco.init(connection);
 Telefone.init(connection);
 
 Cliente.associate(connection.models);
+Fornecedor.associate(connection.models);
 Endereco.associate(connection.models);
 Telefone.associate(connection.models);
 

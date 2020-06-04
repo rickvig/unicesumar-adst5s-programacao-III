@@ -23,6 +23,12 @@ module.exports = {
         onUpdate: 'cascade',
         onDelete: 'cascade'
       },
+      fornecedor_id: {
+        type: Sequelize.INTEGER,
+        references: { model: 'fornecedors', key: 'id' },
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
