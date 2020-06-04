@@ -18,3 +18,5 @@
 - Aula 13 - **06/05/2020** - Revisão da prova - Atividade: Resumo Artigo MVC *Aula Remota*
 - Aula 13 - **13/05/2020** - Introdução a MVC - Atividade: Telas de CRUD do petshop *Aula Remota*
 - Aula 13 - **20/05/2020** - MVC parte II - Atividade: Apresentar as telas de CRUD Petshop *Aula Remota*
+- Aula 13 - **27/05/2020** - MVC parte III - Atividade: Quiz de Arquitetura e MVC *Aula Remota*
+- Aula 13 - **03/06/2020** - MVC com Nodejs e Express - Atividade: Desafio Petshop - Análise de requisito *Aula Remota*
